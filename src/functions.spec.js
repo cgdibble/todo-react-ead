@@ -1,8 +1,9 @@
 const { testFn, args } = require('effects-as-data/test')
 const cmds = require('./commands')
-const { createTodo } = require('./functions')
+import createTodo from './functions'
 const { setTestState } = require('./handlers')
 const store = require('./store')
+
 describe('handlers.js', () => {
   describe('createTodo()', () => {
     const testCreateTodo = testFn(createTodo)

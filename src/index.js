@@ -1,20 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import store from './store'
 import App from './App';
 import { Provider } from "redux-zero/react"
 import registerServiceWorker from './registerServiceWorker';
 import regeneratorRuntime from 'regenerator-runtime'
+import { buildFunctions } from "effects-as-data/es5";
 /// my changes
-import store from './store'
 global.regeneratorRuntime = regeneratorRuntime
-const { buildFunctions } = require("effects-as-data/es5")
 
 const handlers = require('./handlers')
 const functions = require('./functions')
+// TODO: Handlers really need to be functions here as they are changing state
+const functionsAndHandlers = {...handlers, ...functions}
 
 const config = { };
-const builtFunction = buildFunctions(config, handlers, functions)
+const builtFunction = buildFunctions(config, handlers, functionsAndHandlers)
+console.log('builtFunction:', builtFunction)
 
 ReactDOM.render(
   <Provider store={store}>

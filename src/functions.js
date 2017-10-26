@@ -1,6 +1,6 @@
 const cmds = require('./commands')
 
-const createTodo = function * () {
+export default function* createTodo() {
   const content = yield cmds.getState('create.content')
   if (!hasContent(content)) return
   const timestamp = yield cmds.now()
@@ -15,8 +15,4 @@ const createTodo = function * () {
 
 const hasContent = (s) => {
   return !!(s || "").trim();
-}
-
-export {
-  createTodo
 }

@@ -1,28 +1,24 @@
+import store from './store'
 const { get } = require('object-path')
-let store = require('./store')
+let localStore = store
 
-const setTestState = (desiredState) => store = desiredState
-const getState = ({ path }) => {
-  const state = store.getState()
+export const setTestState = (desiredState) => {
+  localStore = desiredState
+}
+export const getState = ({ path }) => {
+  const state = localStore.getState()
   return get(state, path)
 }
 
-const addTodo = ({ todo }) => {
-  const { todos } = store.getState()
-  store.setState({
+export const addTodo = ({ todo }) => {
+  const { todos } = localStore.getState()
+  localStore.setState({
     todos: [...todos, todo]
   })
 }
 
-const setContent = ({ content }) => {
-  store.setState({
+export const setContent = ({ content }) => {
+  localStore.setState({
     content
   })
-}
-
-module.exports = {
-  getState,
-  setTestState,
-  addTodo,
-  setContent
 }

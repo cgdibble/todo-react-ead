@@ -5,13 +5,14 @@
 */
 
 import createStore from 'redux-zero'
-
+import createTodo from './functions'
+// import { getState, addTodo, setContent } from './handlers'
 const initialState = {
-  count: 1
-  // filter: null,
-  // content: '',
-  // todos: []
+  createTodo,
+  filter: null,
+  content: '',
+  todos: []
 }
 
-const store = createStore(initialState)
+let store = createStore(initialState)
 export default store
