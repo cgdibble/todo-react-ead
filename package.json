@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "effects-as-data": "^2.14.9",
+    "effects-as-data-redux": "^1.0.3",
+    "effects-as-data-universal": "^4.2.0",
+    "hyperdom": "^0.10.0",
+    "object-path": "^0.11.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
+    "redux-zero": "^4.1.1",
     "regenerator-runtime": "^0.11.0"
   },
   "scripts": {
