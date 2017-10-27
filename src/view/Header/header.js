@@ -28,7 +28,6 @@ export default function Header({
   todos,
   toggleAllComplete
 }) {
-  console.log('setContent:', setContent)
   return (
     <header>
       <h1>Todos:</h1>

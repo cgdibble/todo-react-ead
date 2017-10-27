@@ -6,21 +6,20 @@ import Header from './view/Header/header'
 const { createElement: create } = React
 
 const mapStateToProps = (state, second) => { //state here seems to be just the store
-  console.log('second:', second.mapToProps)
   const {
     content,
     createTodo,
     // deleteTodo,
     filter,
-    // setContent,
+    setContent,
     // setFilter,
     todos,
-    // toggleAllComplete,
+    toggleAllComplete,
     // toggleComplete
   } = state
-  console.log('state:', state)
   return {
     ...state,
+    setContent,
     content,
     createTodo,
     filter,
@@ -28,8 +27,14 @@ const mapStateToProps = (state, second) => { //state here seems to be just the s
   };
 };
 
-export default connect(mapStateToProps)((things) => {
-  // console.log('things:', things)
+export default connect(mapStateToProps)(({
+  setContent,
+  content,
+  createTodo,
+  todos,
+  toggleAllComplete
+}) => {
+  console.log('APP: setContent:', setContent)
   return (
   <div>
     <section className="todoapp">

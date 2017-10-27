@@ -15,10 +15,8 @@ const functions = require('./functions')
 // TODO: Handlers really need to be functions here as they are changing state
 const functionsAndHandlers = {...handlers, ...functions}
 
-const config = { };
+const config = {};
 const builtFunction = buildFunctions(config, handlers, functionsAndHandlers)
-console.log('builtFunction:', builtFunction)
-
 ReactDOM.render(
   <Provider store={store}>
     <App functions={builtFunction}/>

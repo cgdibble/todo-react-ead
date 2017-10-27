@@ -6,12 +6,16 @@
 
 import createStore from 'redux-zero'
 import createTodo from './functions'
-// import { getState, addTodo, setContent } from './handlers'
+import commands from './effects/commands/cmds'
+import handlers from './effects/handlers/fnsFromReducers'
+const theHandlers = handlers()
 const initialState = {
   createTodo,
   filter: null,
   content: '',
-  todos: []
+  todos: [],
+  ...theHandlers
+  // ...commands
 }
 
 let store = createStore(initialState)
