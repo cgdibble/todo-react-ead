@@ -98,5 +98,9 @@ export default store => ({
   setContent,
   setFilter,
   markAllActive,
-  markAllComplete
+  markAllComplete,
+  deleteTodo,
+  updateTodo,
+  addTodo,
+  setTodos
 })
