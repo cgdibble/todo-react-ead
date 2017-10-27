@@ -8,6 +8,7 @@
     "effects-as-data-universal": "^4.2.0",
     "hyperdom": "^0.10.0",
     "object-path": "^0.11.4",
+    "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",

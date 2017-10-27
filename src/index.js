@@ -17,6 +17,7 @@ const functionsAndHandlers = {...handlers, ...functions}
 
 const config = {};
 const builtFunction = buildFunctions(config, handlers, functionsAndHandlers)
+
 ReactDOM.render(
   <Provider store={store}>
     <App functions={builtFunction}/>
